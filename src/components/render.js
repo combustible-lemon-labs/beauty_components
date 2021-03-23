@@ -9,11 +9,15 @@ import { useCallback, useEffect, useState } from "https://unpkg.com/preact/hooks
  * * `false` - Will hide the component's children, completely removing them from the webpage's DOM.
  */
 const Render = ({ children }) => {
+  console.log('trigger render')
+
   const [isRendering, setIsRendering] = useState(false)
 
   const handleRenderMessage = useCallback((e) => {
-    if (e.data.show !== undefined) {
-      setIsRendering(e.data.show)
+    const shouldRender = e.data.render
+
+    if (shouldRender !== undefined) {
+      setIsRendering(shouldRender)
     }
   }, [setIsRendering])
 

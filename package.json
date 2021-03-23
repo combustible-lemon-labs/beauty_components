@@ -1,46 +1,34 @@
 {
-  "name": "fivem_beauty_components",
+  "name": "beauty_components",
   "version": "1.0.0",
-  "description": "FiveM NUI components created using Preact and TailwindCSS",
+  "description": "NUI components created using Preact and TailwindCSS",
   "main": "index.js",
-  "repository": "https://github.com/Ascent-Gaming/fivem_beauty_components",
+  "repository": "https://github.com/combustible-lemon-labs/beauty_components",
   "contributors": [
     "realStandal <realStandal@users.noreply.github.com>"
   ],
   "scripts": {
-    "build:nui": "cross-env NODE_ENV=production postcss src/html/styles/style.css -o src/html/styles/dist/style.css",
+    "build:nui": "cross-env NODE_ENV=production postcss src/styles/style.css -o src/styles/dist/style.css",
     "build:script": "webpack --mode production",
-    "build": "concurrently \"npm run build:nui\" \"npm run build:script\"",
-    "watch:nui": "postcss -w src/html/styles/style.css -o src/html/styles/dist/style.css",
+    "build": "concurrently \"npm run build:nui\"",
+    "watch:nui": "postcss -w src/styles/style.css -o src/styles/dist/style.css",
     "watch:script": "webpack --mode development --watch true",
-    "watch": "concurrently \"npm run watch:nui\" \"npm run watch:script\"",
+    "watch": "concurrently \"npm run watch:nui\"",
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "license": "MIT",
   "private": false,
   "dependencies": {
-    "@citizenfx/client": "^1.0.2792-1",
-    "@citizenfx/server": "^1.0.2792-1",
-    "@types/node": "^14.0.27",
-    "fivem-js": "^1.5.2"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^3.8.0",
-    "@typescript-eslint/parser": "^2.34.0",
     "autoprefixer": "^10.2.5",
     "concurrently": "^6.0.0",
     "cross-env": "^7.0.3",
-    "eslint": "^7.6.0",
-    "eslint-config-prettier": "^6.11.0",
-    "eslint-loader": "^4.0.2",
     "postcss": "^8.2.8",
     "postcss-cli": "^8.3.1",
-    "prettier": "^2.0.5",
     "remove-files-webpack-plugin": "^1.4.3",
     "tailwindcss": "^2.0.4",
-    "ts-loader": "^8.0.2",
-    "typescript": "^3.9.7",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12"
   }
